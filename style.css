@@ -1,0 +1,288 @@
+/* css reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-size: 100%;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  width: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* sometimes referred to as .sr-only */
+.visually-hidden:not(:focus):not(:active):not(:focus-within) {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+body {
+  font-size: 1.125rem;
+  font-family: var(--ff-outfit);
+  display: grid;
+  place-content: center;
+  background-color: hsl(var(--main-bkg));
+  color: hsl(var(--text-clr));
+}
+
+/* utility classes */
+.flex {
+  display: flex;
+  gap: var(--_gap, 0.5rem);
+  align-items: center;
+}
+
+.d-flex-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.accent-clr:is(:hover, :focus-visible) {
+  color: hsl(var(--accent-clr));
+}
+
+.accent-clr {
+  color: hsl(var(--white-clr));
+  transition: var(--transition);
+}
+
+html {
+  font-family: 62.5%;
+}
+
+/* variables */
+* {
+  /* colors */
+
+  /* ### Primary */
+  --Softblue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+
+  /* ### Neutral */
+  --White: hsl(0, 0%, 100%);
+  /* (line) */
+  --line-Very-dark-blue: hsl(215, 32%, 27%);
+
+  /* (main BG) */
+  --main-Very-dark-blue: hsl(217, 54%, 11%);
+
+  /* (card BG) */
+  --card-Very-dark-blue: hsl(216, 50%, 16%);
+
+  /* font */
+  --Outfit: "Outfit", sans-serif;
+}
+
+body {
+  background-color: var(--main-Very-dark-blue);
+  font-family: var(--Outfit);
+  font-size: 1.2rem;
+}
+
+main {
+  max-width: 23rem;
+  margin-inline: auto;
+  background-color: var(--main-Very-dark-blue);
+  padding: 1rem;
+}
+
+p {
+  color: var(--Softblue);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+span {
+  color: var(--White);
+}
+
+.card {
+  display: grid;
+  place-content: center;
+  border-radius: 2rem;
+  background-color: var(--card-Very-dark-blue);
+  padding-block: 1.7rem;
+}
+
+.image-equilibrium {
+  width: 94%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0.8rem;
+}
+
+.header {
+  margin-top: 1rem;
+  padding-left: 0.2rem 0;
+  color: var(--White);
+  font-size: 1.6rem;
+  margin-block-end: 1.25rem;
+  padding-left: 0.7rem;
+}
+
+.header:hover {
+  color: var(--Cyan);
+}
+
+.ad {
+  font-size: 1rem;
+  font-weight: 300;
+  padding-left: 0.7rem;
+  padding-bottom: 0.5rem;
+}
+
+.version-lunch {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.version {
+  color: var(--Cyan);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.lunch {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.icon-ethereum,
+.icon-clock {
+  height: 1.7rem;
+  padding-left: 0.7rem;
+}
+
+.author {
+  display: flex;
+  padding-top: 0.7rem;
+  padding-left: 0.7rem;
+}
+
+.author img {
+  width: 50px;
+}
+
+.author p {
+  position: relative;
+  top: 0.8rem;
+  margin-left: 0.7rem;
+}
+
+@media (min-width: 375px) {
+  .main {
+    display: block;
+  }
+}
